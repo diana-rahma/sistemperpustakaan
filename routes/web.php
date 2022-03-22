@@ -87,12 +87,13 @@ Route::get('/tambah_konfirmasi', function () {
 Route::get('/listkategori', function () {
     return view('backend.listkategori');
 });
-Route::get('/tambah_kategori', function () {
-    return view('backend.tambah_kategori');
-});
-Route::get('/edit_kategori', function () {
-    return view('backend.edit_kategori');
-});
+Route::get('/tambah_kategori',[ListkategoriController::class, 'tambahdata'])->name('tambahdata')  ;
+Route::post('/insertdata',[ListkategoriController::class, 'insertdata'])->name('insertdata')  ;
+
+Route::get('/tampilkandata/{id}',[ListkategoriController::class, 'tampilkandata'])->name('tampilkandata')  ;
+Route::post('/updatedata/{id}',[ListkategoriController::class, 'updatedata'])->name('updatedata')  ;
+
+Route::get('/delete/{id}',[ListkategoriController::class, 'delete'])->name('delete')  ;
 
 
 Route::get('/historydenda', function () {

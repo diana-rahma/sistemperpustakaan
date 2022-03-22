@@ -367,7 +367,7 @@
 
                                             <tr>
                                                 <th scope="row">{{ $no++ }}</th>
-                                                <td>{{ $row->kategori </td>
+                                                <td>{{ $row->kategori }}</td>
                                                 <td>
                                                     <img src="{{ asset('foto/'.$row->file)}}" alt="">
                                                 </td>

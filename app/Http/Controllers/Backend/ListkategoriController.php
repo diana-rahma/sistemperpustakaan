@@ -10,9 +10,9 @@ class ListkategoriController extends Controller
     public function index(Request $request) {
 
         if($request->has('search')) {
-            $data = ListKategori::where('kategori','LIKE','%' .$request->search.'%');
+            $data = Listkategori::where('kategori','LIKE','%' .$request->search.'%');
         } else {
-            $data = ListKategori::all();
+            $data = Listkategori::all();
         }
 
         return view('listkategori',compact('data'));
@@ -20,13 +20,13 @@ class ListkategoriController extends Controller
 
     public function tambahdata() {
 
-        $data = ListKategori::all();
+        $data = Listkategori::all();
         return view('tambahdata',compact('data'));
     }
 
     public function insertdata(Request $request) {
         //dd($request->all());
-        $data = ListKategori::create($request->all());
+        $data = Listkategori::create($request->all());
         if($request->hasFile('file')) {
 
             $request->file('file')->move('foto/', $request->file('file')->getClientOriginalName());
@@ -38,7 +38,7 @@ class ListkategoriController extends Controller
 
     public function tampilkandata($id) {
 
-        $data = ListKategori::find($id);
+        $data = Listkategori::find($id);
         //dd($data);
 
         return view('edit_kategori',compact('data'));
