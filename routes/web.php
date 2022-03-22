@@ -27,9 +27,8 @@ Route::get('/index', function () {
     return view('backend.index');
 });
 
-Route::get('/login', function () {
-    return view('backend.login');
-});
+Route::get('/login',[LoginController::class, 'login']);
+Route::post('/login',[LoginController::class, 'authenticate']);
 
 Route::get('/profile', function () {
     return view('backend.profile');
@@ -129,7 +128,7 @@ Route::get('/dipinjam', function () {
     return view('frontend.dipinjam');
 });
 
-Route::get('/konfirmasi', function () {
+Route::get('/konfirmasiuser', function () {
     return view('frontend.konfirmasi');
 });
 
