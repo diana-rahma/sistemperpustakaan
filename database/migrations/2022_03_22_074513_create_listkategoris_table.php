@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistorydendaTable extends Migration
+class CreateListkategorisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateHistorydendaTable extends Migration
      */
     public function up()
     {
-        Schema::create('historydenda', function (Blueprint $table) {
+        Schema::create('listkategori', function (Blueprint $table) {
             $table->id();
+            $table->string('kategori');
+            $table->string('file');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateHistorydendaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historydenda');
+        Schema::dropIfExists('listkategoris');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDatabukuTable extends Migration
+class CreateKonfirmasisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDatabukuTable extends Migration
      */
     public function up()
     {
-        Schema::create('databuku', function (Blueprint $table) {
+        Schema::create('konfirmasis', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateDatabukuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('databuku');
+        Schema::dropIfExists('konfirmasis');
     }
 }

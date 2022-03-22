@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDatasiswaTable extends Migration
+class CreateDatabukusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDatasiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('datasiswa', function (Blueprint $table) {
+        Schema::create('databukus', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateDatasiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datasiswa');
+        Schema::dropIfExists('databukus');
     }
 }
