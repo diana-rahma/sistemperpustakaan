@@ -351,94 +351,32 @@
                                     <table class="table mb-0 thead-border-top-0 table-striped">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Kategori</th>
-                                                <th>Gambar</th>
+                                                <th scope="col">No</th>
+                                                <th scope="col">Kategori</th>
+                                                <th scope="col">Gambar</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="list"
-                                               id="databuku">
+                                        <tbody>
+
+                                        @php
+                                            $no = 1;
+                                        @endphp
+
+                                        @foreach ($data as $row)
 
                                             <tr>
-                                                <td>1</td>
-                                                <td>Fantasy</td>
-                                                <td><img src="images/stories/fantasy.jpg" style="width: 125px; height: 85;" alt=""></td>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->kategori </td>
                                                 <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
+                                                    <img src="{{ asset('foto/'.$row->file)}}" alt="">
+                                                </td>
+                                                <td>
+                                                    <a href="/tampilkandata/{{ $row->id }}"><button type="button" class="btn btn-warning">Edit</button></a>
+                                                    <a href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data buku?')">Hapus</button></a>
                                                 </td>
                                             </tr>
-
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Romance</td>
-                                                <td><img src="images/stories/romance.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Horror</td>
-                                                <td><img src="images/stories/horror.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Adventure</td>
-                                                <td><img src="images/stories/adventure.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Mistery</td>
-                                                <td><img src="images/stories/mistery.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Biography</td>
-                                                <td><img src="images/stories/biography.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Dictionary</td>
-                                                <td><img src="images/stories/dictionary.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Humor</td>
-                                                <td><img src="images/stories/humor.jpg" style="width: 125px; height: 85;" alt=""></td>
-                                                <td>
-                                                    <a href="/edit_kategori" type="button" class="btn btn-warning">Edit</a>
-                                                    <a href="/delete_kategori"type="button" class="btn btn-danger">Delete</a>         
-                                                </td>
-                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>

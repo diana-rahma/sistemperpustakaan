@@ -347,37 +347,29 @@
                                 <div class="row no-gutters">
                                     <div class="col-lg-15 card-form__body card-body">
                                         <div class="row">
+                                              @csrf
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="lname">Kategori</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Fantasy"
-                                                           value="">
+                                                    <label for="lname" class="form-label">Kategori</label>
+                                                    <input type="text" name="nama" class="form-control" id="lname" value="{{ $data->kategori}}">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="opass">Gambar</label>
-                                                    <input 
-                                                           id="opass"
-                                                           type="file"
-                                                           class="form-control"
-                                                           placeholder="Gambar"
-                                                           value="">
+                                                    <label for="opass" class="form-label">Gambar</label>
+                                                    <input type="file" name="file" class="form-control" id="lname" value="{{ $data->file}}">
+                                                </div>
+                                                <div>
+                                                <img src="{{ asset('foto/'.$data->file)}}">
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
 
-                            
                             <div class="text-right mb-5">
-                                <a href="/listkategori"
-                                   class="btn btn-success">Save</a>
+                                <a href="/listkategori"><button type="submit" class="btn btn-secondary">Save</button></a>
                             </div>
                         </div>
 

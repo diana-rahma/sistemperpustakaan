@@ -330,27 +330,17 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="lname">Kategori</label>
-                                                    <input id="lname"
-                                                           type="text"
-                                                           class="form-control"
-                                                           placeholder="Kategori"
-                                                           value="">
+                                                    <label for="lname" class="form-label">Kategori</label>
+                                                    <input type="text" name="nama" class="form-control" id="lname" placeholder="Kategori" value="">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <label for="opass">Gambar</label>
-                                                    <input 
-                                                           id="opass"
-                                                           type="file"
-                                                           class="form-control"
-                                                           placeholder="Gambar"
-                                                           value="">
+                                                    <label for="opass" class="form-label">Gambar</label>
+                                                    <input type="file" name="file" class="form-control" id="lname" placeholder="Gambar" value="">
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
