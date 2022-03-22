@@ -155,8 +155,8 @@ Route::get('/romance', function () {
 Route::get('/horror', function () {
     return view('frontend.horror');
 });
-Route::get('/advanture', function () {
-    return view('frontend.');
+Route::get('/adventure', function () {
+    return view('frontend.adventure');
 });
 Route::get('/mistery', function () {
     return view('frontend.mistery');
