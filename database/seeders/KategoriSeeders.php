@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class ListkategoriSeeder extends Seeder
+class KategoriSeeders extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +14,7 @@ class ListkategoriSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('listkategori')->insert([
+        DB::table('kategoris')->insert([
             'kategori' => 'Fantasy',
             'file' => 'fantasy'
         ]) ;
