@@ -363,7 +363,6 @@
                                             $no = 1;
                                         @endphp
 
-                                        
 
                                         </tbody>
                                     </table>

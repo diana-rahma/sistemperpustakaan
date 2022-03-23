@@ -110,11 +110,11 @@ Route::get('/tambah_konfirmasi', function () {
 
 Route::get('/listkategori', [KategoriController::class, 'index']);
 
-// Route::get('/tambah_kategori',[KategoriController::class, 'tambahdata'])->name('tambahdata')  ;
-// Route::post('/insertdata',[KategoriController::class, 'insertdata'])->name('insertdata')  ;
+Route::get('/tambah_kategori',[KategoriController::class, 'tambah_kategori'])->name('tambah_kategori')  ;
+Route::post('/insertkategori',[KategoriController::class, 'insertkategori'])->name('insertkategori')  ;
 
-// Route::get('/tampilkandata/{id}',[KategoriController::class, 'tampilkandata'])->name('tampilkandata')  ;
-// Route::post('/updatedata/{id}',[KategoriController::class, 'updatedata'])->name('updatedata')  ;
+Route::get('/edit_kategori/{id}',[KategoriController::class, 'edit_kategori'])->name('edit_kategori')  ;
+Route::post('/updatekategori/{id}',[KategoriController::class, 'updatekategori'])->name('updatekategori')  ;
 
 // Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')  ;
 

@@ -347,7 +347,7 @@
 
                             
                             <div class="text-right mb-5">
-                                <a href="listkategori.html"
+                                <a href="/listkategori"
                                    class="btn btn-success">Save</a>
                             </div>
                         </div>
