@@ -8,7 +8,7 @@ use App\Http\Controllers\Backend\DatasiswaController;
 use App\Http\Controllers\Backend\HistoryController;
 use App\Http\Controllers\Backend\IndexController;
 use App\Http\Controllers\Backend\KonfirmasiController;
-use App\Http\Controllers\Backend\ListkategoriController;
+use App\Http\Controllers\Backend\KategoriController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\SignupController;
 
@@ -23,16 +23,25 @@ use App\Http\Controllers\Backend\SignupController;
 |
 */
 
+// Backend
+
 Route::get('/index', function () {
     return view('backend.index');
 });
 
+// Route Login
+
 Route::get('/login',[LoginController::class, 'login']);
 Route::post('/login',[LoginController::class, 'authenticate']);
+
+// Route Profile - Backend
 
 Route::get('/profile', function () {
     return view('backend.profile');
 });
+
+
+// Route Data Siswa - Backend
 
 Route::get('/datasiswa', function () {
     return view('backend.datasiswa');
@@ -45,10 +54,20 @@ Route::get('/edit_siswa', function () {
 });
 
 
+// Route List Kelas - Backend
+
 Route::get('/listkelas', function () {
     return view('backend.listkelas');
 });
+Route::get('/tambah_kelas', function () {
+    return view('backend.tambah_kelas');
+});
+Route::get('/edit_kelas', function () {
+    return view('backend.edit_kelas');
+});
 
+
+// Route Data Peminjam - Backend
 
 Route::get('/datapeminjam', function () {
     return view('backend.datapeminjam');
@@ -64,6 +83,8 @@ Route::get('/edit_peminjam', function () {
 });
 
 
+// Route Data Buku - Backend
+
 Route::get('/databuku', function () {
     return view('backend.databuku');
 });
@@ -75,6 +96,8 @@ Route::get('/edit_buku', function () {
 });
 
 
+// Route Konfirmasi - Backend
+
 Route::get('/konfirmasi', function () {
     return view('backend.konfirmasi');
 });
@@ -83,17 +106,20 @@ Route::get('/tambah_konfirmasi', function () {
 });
 
 
-Route::get('/listkategori', function () {
-    return view('backend.listkategori');
-});
-Route::get('/tambah_kategori',[ListkategoriController::class, 'tambahdata'])->name('tambahdata')  ;
-Route::post('/insertdata',[ListkategoriController::class, 'insertdata'])->name('insertdata')  ;
+// Route Kategori - Frontend
 
-Route::get('/tampilkandata/{id}',[ListkategoriController::class, 'tampilkandata'])->name('tampilkandata')  ;
-Route::post('/updatedata/{id}',[ListkategoriController::class, 'updatedata'])->name('updatedata')  ;
+Route::get('/listkategori', [KategoriController::class, 'index']);
 
-Route::get('/delete/{id}',[ListkategoriController::class, 'delete'])->name('delete')  ;
+// Route::get('/tambah_kategori',[KategoriController::class, 'tambahdata'])->name('tambahdata')  ;
+// Route::post('/insertdata',[KategoriController::class, 'insertdata'])->name('insertdata')  ;
 
+// Route::get('/tampilkandata/{id}',[KategoriController::class, 'tampilkandata'])->name('tampilkandata')  ;
+// Route::post('/updatedata/{id}',[KategoriController::class, 'updatedata'])->name('updatedata')  ;
+
+// Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')  ;
+
+
+// Route History - Backend
 
 Route::get('/historydenda', function () {
     return view('backend.historydenda');
@@ -106,45 +132,59 @@ Route::get('/edit_history', function () {
 });
 
 
-Route::get('/tambah_kelas', function () {
-    return view('backend.tambah_kelas');
-});
-Route::get('/edit_kelas', function () {
-    return view('backend.edit_kelas');
-});
 
 
 
+// Frontend
 
 Route::get('/indexuser', function () {
     return view('frontend.index');
 });
 
+
+// Route List Buku - Frontend
+
 Route::get('/listbuku', function () {
     return view('frontend.listbuku');
 });
+
+
+// Route Dipinjam - Frontend
 
 Route::get('/dipinjam', function () {
     return view('frontend.dipinjam');
 });
 
+
+// Route Konfirmasi - Frontend
+
 Route::get('/konfirmasiuser', function () {
     return view('frontend.konfirmasi');
 });
+
+
+// Route History - Frontend
 
 Route::get('/history', function () {
     return view('frontend.history');
 });
 
+
+// Route Denda - Frontend
+
 Route::get('/denda', function () {
     return view('frontend.denda');
 });
+
+
+// Route Profile - Frontend
 
 Route::get('/profileuser', function () {
     return view('frontend.profile');
 });
 
 
+// Route Genre - Frontend
 
 Route::get('/fantasy', function () {
     return view('frontend.fantasy');
@@ -182,12 +222,9 @@ Route::get('/paket3', function () {
 Route::get('/pakettambahan', function () {
     return view('frontend.pakettambahan');
 });
-
 Route::get('/themagiclibrary', function () {
     return view('frontend.buku.fantasy.themagiclibrary');
 });
-
-
 
 
 
