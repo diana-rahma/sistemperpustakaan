@@ -363,6 +363,20 @@
                                             $no = 1;
                                         @endphp
 
+                                        @foreach ($data as $row)
+
+                                            <tr>
+                                                <th scope="row">{{ $no++ }}</th>
+                                                <td>{{ $row->kategori }}</td>
+                                                <td>
+                                                    <img src="{{ asset('foto/'.$row->file)}}" alt="">
+                                                </td>
+                                                <td>
+                                                    <a href="/tampilkandata/{{ $row->id }}"><button type="button" class="btn btn-warning">Edit</button></a>
+                                                    <a href="/delete/{{ $row->id }}"><button type="button" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data buku?')">Hapus</button></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>

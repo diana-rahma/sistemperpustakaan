@@ -3,18 +3,26 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
 
-        return view('backend.listkategori');
+        if($request->has('search')) {
+            $data = Kategori::where('kategori','LIKE','%' .$request->search.'%');
+        } else {
+            $data = Kategori::all();
+        }
+
+        return view('backend.listkategori',compact('data'));
     }
 
     public function tambah_kategori() {
 
-        return view('backend.tambah_kategori');
+        $data = Kategori::all();
+        return view('backend.tambah_kategori',compact('data'));
 
     }
 
