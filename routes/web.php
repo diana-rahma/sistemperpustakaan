@@ -113,10 +113,10 @@ Route::get('/listkategori', [KategoriController::class, 'index']);
 Route::get('/tambah_kategori',[KategoriController::class, 'tambah_kategori'])->name('tambah_kategori')  ;
 Route::post('/insertkategori',[KategoriController::class, 'insertkategori'])->name('insertkategori')  ;
 
-Route::get('/edit_kategori/{id}',[KategoriController::class, 'edit_kategori'])->name('edit_kategori')  ;
+Route::get('/edit_kategori{id}',[KategoriController::class, 'edit_kategori'])->name('edit_kategori')  ;
 Route::post('/updatekategori/{id}',[KategoriController::class, 'updatekategori'])->name('updatekategori')  ;
 
-// Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')  ;
+Route::get('/delete/{id}',[KategoriController::class, 'delete'])->name('delete')  ;
 
 
 // Route History - Backend
