@@ -342,13 +342,13 @@
                             </div>
                         </div>
 
-                        <form action="/listkategori" method="POST">
+                        <form action="{{ route('edit_kategori',/ $data->id) }}"  method="POST" enctype="multipart/form-data">
+                            @csrf 
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
                                         <div class="col-lg-15 card-form__body card-body">
                                             <div class="row">
-                                                @csrf 
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <label for="lname" class="form-label">Kategori</label>

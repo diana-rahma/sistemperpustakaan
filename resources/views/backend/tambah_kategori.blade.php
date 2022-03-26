@@ -8,6 +8,7 @@
               content="IE=edge">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, shrink-to-fit=no">
+              
         <title>Tambah Genre</title>
 
         <!-- Prevent the demo from appearing in search engines -->
@@ -322,8 +323,8 @@
                                 </div>
                             </div>
                         </div>
-
-                        <form action="/listkategori" method="POST">
+                        <form action="{{ route('insertkategori') }}" method="POSt" enctype="multipart/form-data">
+                        @csrf
                             <div class="container-fluid page__container">
                                 <div class="card card-form">
                                     <div class="row no-gutters">
@@ -351,7 +352,7 @@
                                     <a href="/listkategori"><button type="submit" class="btn btn-success">Save</button></a>
                                 </div>
                             </div>
-
+                        </form>
                     </div>
                     <!-- // END drawer-layout__content -->
 
